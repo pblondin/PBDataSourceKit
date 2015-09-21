@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "PBDataLoadingOperation.h"
 
+#import <MagicalRecord/MagicalRecord.h>
 #import <CoreData/CoreData.h>
 
 @class PBDataProvider;
