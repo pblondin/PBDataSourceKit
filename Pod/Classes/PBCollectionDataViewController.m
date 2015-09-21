@@ -7,7 +7,7 @@
 //
 
 #import "PBCollectionDataViewController.h"
-#import "DataCellConfigure.h"
+#import "PBDataCellConfigure.h"
 
 @interface PBCollectionDataViewController ()
 
@@ -140,8 +140,8 @@
     return [self.dataProvider.dataObjects count];
 }
 
-- (UICollectionViewCell<DataCellProtocol> *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    UICollectionViewCell<DataCellProtocol> *cell =
+- (UICollectionViewCell<PBDataCellProtocol> *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    UICollectionViewCell<PBDataCellProtocol> *cell =
         [collectionView dequeueReusableCellWithReuseIdentifier:[[UICollectionViewCell class] cellReusableIdentifier] forIndexPath:indexPath];
     NSObject *item = [self.dataProvider dataAtIndexPath:indexPath];
     [cell configureCell:item];

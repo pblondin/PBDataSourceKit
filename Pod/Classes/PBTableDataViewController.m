@@ -7,7 +7,7 @@
 //
 
 #import "PBTableDataViewController.h"
-#import "DataCellConfigure.h"
+#import "PBDataCellConfigure.h"
 
 @interface PBTableDataViewController () <DataProviderDelegate>
 
@@ -203,8 +203,8 @@
     return [self.dataProvider.dataObjects count];
 }
 
-- (UITableViewCell<DataCellProtocol> *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell<DataCellProtocol> *cell =
+- (UITableViewCell<PBDataCellProtocol> *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell<PBDataCellProtocol> *cell =
         [tableView dequeueReusableCellWithIdentifier:[[UITableViewCell class] cellReusableIdentifier] forIndexPath:indexPath];
     NSObject *item = [self.dataProvider dataAtIndexPath:indexPath];
     [cell configureCell:item];

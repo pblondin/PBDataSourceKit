@@ -9,6 +9,8 @@
 #import "PBDataProvider.h"
 #import "PBDataLoadingOperation.h"
 
+#import <MagicalRecord/MagicalRecord.h>
+
 @interface PBDataProvider ()
 
 @property(strong, nonatomic, readwrite) NSMutableArray *dataArray;
