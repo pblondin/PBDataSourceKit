@@ -1,15 +1,11 @@
 #
-# Be sure to run `pod lib lint PBDataSourceKit.podspec' to ensure this is a
-# valid spec before submitting.
-#
-# Any lines starting with a # are optional, but their use is encouraged
-# To learn more about a Podspec see http://guides.cocoapods.org/syntax/podspec.html
+# Data source kit
 #
 
 Pod::Spec.new do |s|
   s.name             = "PBDataSourceKit"
   s.version          = "0.1.0"
-  s.summary          = "A short description of PBDataSourceKit."
+  s.summary          = "PBDataSourceKit."
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -19,12 +15,13 @@ Pod::Spec.new do |s|
   s.description      = <<-DESC
                        DESC
 
-  s.homepage         = "https://github.com/<GITHUB_USERNAME>/PBDataSourceKit"
+  s.homepage         = "https://github.com/pblondin/PBDataSourceKit"
   # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
   s.license          = 'MIT'
   s.author           = { "Philippe Blondin" => "info@philippeblondin.ca" }
-  s.source           = { :git => "https://github.com/<GITHUB_USERNAME>/PBDataSourceKit.git", :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  # s.source           = { :git => "https://github.com/pblondin/PBDataSourceKit.git", :tag => s.version.to_s }
+  s.source           = { :git => "/Users/pblondin/Developper/private-pods/PBDataSourceKit.git", :tag => s.version.to_s }
+  s.social_media_url = 'https://twitter.com/PhilippeBlondin'
 
   s.platform     = :ios, '7.0'
   s.requires_arc = true
@@ -33,6 +30,8 @@ Pod::Spec.new do |s|
   s.resource_bundles = {
     'PBDataSourceKit' => ['Pod/Assets/*.png']
   }
+
+  s.requires_arc = true
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
