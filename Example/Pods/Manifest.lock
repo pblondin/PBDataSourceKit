@@ -1,0 +1,102 @@
+PODS:
+  - AFNetworking (1.3.4)
+  - AWPagedArray (0.3.0)
+  - DZNEmptyDataSet (1.7.1)
+  - ISO8601DateFormatterValueTransformer (0.6.1):
+    - RKValueTransformers (~> 1.1.0)
+  - libextobjc (0.4.1):
+    - libextobjc/EXTADT (= 0.4.1)
+    - libextobjc/EXTConcreteProtocol (= 0.4.1)
+    - libextobjc/EXTKeyPathCoding (= 0.4.1)
+    - libextobjc/EXTNil (= 0.4.1)
+    - libextobjc/EXTSafeCategory (= 0.4.1)
+    - libextobjc/EXTScope (= 0.4.1)
+    - libextobjc/EXTSelectorChecking (= 0.4.1)
+    - libextobjc/EXTSynthesize (= 0.4.1)
+    - libextobjc/NSInvocation+EXT (= 0.4.1)
+    - libextobjc/NSMethodSignature+EXT (= 0.4.1)
+    - libextobjc/RuntimeExtensions (= 0.4.1)
+    - libextobjc/UmbrellaHeader (= 0.4.1)
+  - libextobjc/EXTADT (0.4.1):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/EXTConcreteProtocol (0.4.1):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/EXTKeyPathCoding (0.4.1):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/EXTNil (0.4.1):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/EXTSafeCategory (0.4.1):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/EXTScope (0.4.1):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/EXTSelectorChecking (0.4.1):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/EXTSynthesize (0.4.1):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/NSInvocation+EXT (0.4.1):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/NSMethodSignature+EXT (0.4.1):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/RuntimeExtensions (0.4.1)
+  - libextobjc/UmbrellaHeader (0.4.1)
+  - MagicalRecord (2.3.0)
+  - PBDataSourceKit (0.1.0)
+  - RestKit (0.25.0):
+    - RestKit/Core (= 0.25.0)
+  - RestKit/Core (0.25.0):
+    - RestKit/CoreData
+    - RestKit/Network
+    - RestKit/ObjectMapping
+  - RestKit/CoreData (0.25.0):
+    - RestKit/ObjectMapping
+  - RestKit/Network (0.25.0):
+    - AFNetworking (~> 1.3.0)
+    - RestKit/ObjectMapping
+    - RestKit/Support
+    - SOCKit
+  - RestKit/ObjectMapping (0.25.0):
+    - ISO8601DateFormatterValueTransformer (~> 0.6.1)
+    - RestKit/Support
+    - RKValueTransformers (~> 1.1.0)
+  - RestKit/Support (0.25.0):
+    - TransitionKit (~> 2.1.0)
+  - RKValueTransformers (1.1.2)
+  - SOCKit (1.1)
+  - SVProgressHUD (1.1.3)
+  - TransitionKit (2.1.1)
+
+DEPENDENCIES:
+  - AWPagedArray
+  - DZNEmptyDataSet
+  - libextobjc
+  - MagicalRecord (~> 2.2.x)
+  - PBDataSourceKit (from `../`)
+  - RestKit (~> 0.23.x)
+  - SVProgressHUD (from `https://github.com/pblondin/SVProgressHUD.git`)
+
+EXTERNAL SOURCES:
+  PBDataSourceKit:
+    :path: ../
+  SVProgressHUD:
+    :git: https://github.com/pblondin/SVProgressHUD.git
+
+CHECKOUT OPTIONS:
+  SVProgressHUD:
+    :commit: 138a001b9bf04b8c2b06722b5a71445926fa86ea
+    :git: https://github.com/pblondin/SVProgressHUD.git
+
+SPEC CHECKSUMS:
+  AFNetworking: cf8e418e16f0c9c7e5c3150d019a3c679d015018
+  AWPagedArray: 66db32d015a01d921133a4eb50da1d830271c39a
+  DZNEmptyDataSet: 2a398066c2bf5848f7f693fb50954b5064debd12
+  ISO8601DateFormatterValueTransformer: 52da467d6ec899d6aedda8e48280ac92e8ee97e6
+  libextobjc: a650fc1bf489a3d3a9bc2e621efa3e1006fc5471
+  MagicalRecord: 89eb7d7ead39fb37f01c3d010665ee94d17f8dba
+  PBDataSourceKit: 1c90eb122de0f653379b9b6548097e48d4a551a5
+  RestKit: a4fcaf3d4bb2c204679856a46d596160bf208095
+  RKValueTransformers: 66ac5e4f077fdbe3496e792d89eeff4c3eb67701
+  SOCKit: c7376ac262bea9115b8f749358f762522a47d392
+  SVProgressHUD: 748080e4f36e603f6c02aec292664239df5279c1
+  TransitionKit: 3a14b6acc7cf2d1dd3e454e24dbad1cfab9a1ef1
+
+COCOAPODS: 0.38.2

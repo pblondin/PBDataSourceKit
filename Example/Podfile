@@ -1,12 +1,21 @@
 source 'https://github.com/CocoaPods/Specs.git'
-use_frameworks!
+
+# Inhibits all the warnings from the CocoaPods libraries
+inhibit_all_warnings!
+
+pod 'RestKit', '~> 0.23.x'
+pod 'MagicalRecord', '~> 2.2.x'
+pod 'libextobjc'
+pod 'DZNEmptyDataSet'
+pod 'AWPagedArray'
+
 
 target 'PBDataSourceKit_Example', :exclusive => true do
   pod "PBDataSourceKit", :path => "../"
+  pod 'SVProgressHUD', :git => 'https://github.com/pblondin/SVProgressHUD.git'
 end
 
 target 'PBDataSourceKit_Tests', :exclusive => true do
   pod "PBDataSourceKit", :path => "../"
 
-  
 end
