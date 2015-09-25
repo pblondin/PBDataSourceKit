@@ -7,7 +7,7 @@
 //
 
 #import "PBCollectionDataViewController.h"
-#import "DataCellConfigure.h"
+#import "PBDataCellConfigure.h"
 
 @interface PBCollectionDataViewController ()
 
@@ -15,6 +15,9 @@
 @property(strong, nonatomic) NSMutableArray *sectionChanges;
 @property(strong, nonatomic) NSMutableArray *itemChanges;
 @property(strong, nonatomic) NSIndexPath *lastInsertIndexPath;
+
+// stop listening to the fetched results controller delegate methods
+@property(nonatomic, getter=isPaused) BOOL paused;
 
 @end
 
@@ -40,6 +43,16 @@
     [self setupCollectionUI];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    self.paused = NO;
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    self.paused = YES;
+}
+
 #pragma mark - UI
 
 - (void)setupCollectionUI {
@@ -58,6 +71,18 @@
         if ([self isViewLoaded]) {
             [self.collectionView reloadData];
         }
+    }
+}
+
+// Source: https://www.objc.io/issues/4-core-data/full-core-data-application/
+- (void)setPaused:(BOOL)isPaused {
+    self.paused = isPaused;
+    if (self.paused) {
+        self.dataProvider.fetchedResultsController.delegate = nil;
+    } else {
+        self.dataProvider.fetchedResultsController.delegate = self;
+        [self.dataProvider.fetchedResultsController performFetch:NULL];
+        [self.collectionView reloadData];
     }
 }
 
@@ -140,8 +165,8 @@
     return [self.dataProvider.dataObjects count];
 }
 
-- (UICollectionViewCell<DataCellProtocol> *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    UICollectionViewCell<DataCellProtocol> *cell =
+- (UICollectionViewCell<PBDataCellProtocol> *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    UICollectionViewCell<PBDataCellProtocol> *cell =
         [collectionView dequeueReusableCellWithReuseIdentifier:[[UICollectionViewCell class] cellReusableIdentifier] forIndexPath:indexPath];
     NSObject *item = [self.dataProvider dataAtIndexPath:indexPath];
     [cell configureCell:item];

@@ -7,12 +7,15 @@
 //
 
 #import "PBTableDataViewController.h"
-#import "DataCellConfigure.h"
+#import "PBDataCellConfigure.h"
 
 @interface PBTableDataViewController () <DataProviderDelegate>
 
 // refreshing control
 @property(strong, nonatomic) UIRefreshControl *refreshControl;
+
+// stop listening to the fetched results controller delegate methods
+@property(nonatomic, getter=isPaused) BOOL paused;
 
 @end
 
@@ -47,6 +50,16 @@
     [self setupTableDataUI];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    self.paused = NO;
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    self.paused = YES;
+}
+
 #pragma mark - UI
 
 - (void)setupTableDataUI {
@@ -63,6 +76,18 @@
 }
 
 #pragma mark - Accessors
+
+// Source: https://www.objc.io/issues/4-core-data/full-core-data-application/
+- (void)setPaused:(BOOL)isPaused {
+    self.paused = isPaused;
+    if (self.paused) {
+        self.dataProvider.fetchedResultsController.delegate = nil;
+    } else {
+        self.dataProvider.fetchedResultsController.delegate = self;
+        [self.dataProvider.fetchedResultsController performFetch:NULL];
+        [self.tableView reloadData];
+    }
+}
 
 - (void)setAddPullToRefreshControl:(BOOL)addPullToRefreshControl {
     _addPullToRefreshControl = addPullToRefreshControl;
@@ -203,8 +228,8 @@
     return [self.dataProvider.dataObjects count];
 }
 
-- (UITableViewCell<DataCellProtocol> *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell<DataCellProtocol> *cell =
+- (UITableViewCell<PBDataCellProtocol> *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell<PBDataCellProtocol> *cell =
         [tableView dequeueReusableCellWithIdentifier:[[UITableViewCell class] cellReusableIdentifier] forIndexPath:indexPath];
     NSObject *item = [self.dataProvider dataAtIndexPath:indexPath];
     [cell configureCell:item];

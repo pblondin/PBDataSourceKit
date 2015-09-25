@@ -1,17 +1,18 @@
 {
   "name": "PBDataSourceKit",
   "version": "0.1.0",
-  "summary": "A short description of PBDataSourceKit.",
-  "description": "",
-  "homepage": "https://github.com/<GITHUB_USERNAME>/PBDataSourceKit",
+  "summary": "PBDataSourceKit.",
+  "description": "Abstract data provider for UITableView and UICollectionView",
+  "homepage": "https://github.com/pblondin/PBDataSourceKit",
   "license": "MIT",
   "authors": {
     "Philippe Blondin": "info@philippeblondin.ca"
   },
   "source": {
-    "git": "https://github.com/<GITHUB_USERNAME>/PBDataSourceKit.git",
+    "git": "https://github.com/pblondin/PBDataSourceKit.git",
     "tag": "0.1.0"
   },
+  "social_media_url": "https://twitter.com/PhilippeBlondin",
   "platforms": {
     "ios": "7.0"
   },
@@ -21,5 +22,12 @@
     "PBDataSourceKit": [
       "Pod/Assets/*.png"
     ]
-  }
+  },
+  "dependencies": {
+    "MagicalRecord": [
+
+    ]
+  },
+  "frameworks": "CoreData",
+  "prefix_header_contents": "#import <CoreData/CoreData.h>\n#import <MagicalRecord/MagicalRecord.h>"
 }
