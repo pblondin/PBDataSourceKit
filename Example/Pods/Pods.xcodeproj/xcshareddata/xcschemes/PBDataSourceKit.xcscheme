@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "6F5178D2E1CF3660504F2F72"
+               BlueprintIdentifier = "8476C5C144C9AB327464899E"
                BuildableName = "libPBDataSourceKit.a"
                BlueprintName = "PBDataSourceKit"
                ReferencedContainer = "container:Pods.xcodeproj">

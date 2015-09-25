@@ -14,6 +14,9 @@
 // refreshing control
 @property(strong, nonatomic) UIRefreshControl *refreshControl;
 
+// stop listening to the fetched results controller delegate methods
+@property(nonatomic, getter=isPaused) BOOL paused;
+
 @end
 
 @implementation PBTableDataViewController
@@ -47,6 +50,16 @@
     [self setupTableDataUI];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    self.paused = NO;
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    self.paused = YES;
+}
+
 #pragma mark - UI
 
 - (void)setupTableDataUI {
@@ -63,6 +76,18 @@
 }
 
 #pragma mark - Accessors
+
+// Source: https://www.objc.io/issues/4-core-data/full-core-data-application/
+- (void)setPaused:(BOOL)isPaused {
+    self.paused = isPaused;
+    if (self.paused) {
+        self.dataProvider.fetchedResultsController.delegate = nil;
+    } else {
+        self.dataProvider.fetchedResultsController.delegate = self;
+        [self.dataProvider.fetchedResultsController performFetch:NULL];
+        [self.tableView reloadData];
+    }
+}
 
 - (void)setAddPullToRefreshControl:(BOOL)addPullToRefreshControl {
     _addPullToRefreshControl = addPullToRefreshControl;
