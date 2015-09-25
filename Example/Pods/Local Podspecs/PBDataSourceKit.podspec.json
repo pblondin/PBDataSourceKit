@@ -1,6 +1,6 @@
 {
   "name": "PBDataSourceKit",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "summary": "PBDataSourceKit.",
   "description": "Abstract data provider for UITableView and UICollectionView",
   "homepage": "https://github.com/pblondin/PBDataSourceKit",
@@ -10,7 +10,7 @@
   },
   "source": {
     "git": "https://github.com/pblondin/PBDataSourceKit.git",
-    "tag": "0.1.0"
+    "tag": "0.1.1"
   },
   "social_media_url": "https://twitter.com/PhilippeBlondin",
   "platforms": {
