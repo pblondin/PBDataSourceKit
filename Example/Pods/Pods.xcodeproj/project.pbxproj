@@ -231,6 +231,7 @@
 		B5D86CA42906D0518CD3A42CED04C6FE /* RKObjectMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = 746FB1C234A3FD6E44A5CFFC2EE86BC7 /* RKObjectMapping.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0 -w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		B8291EBC0CA538454602E54BDA92A1B7 /* TransitionKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 15854EBB45118A734AE77C8EFB408F10 /* TransitionKit-dummy.m */; };
 		B8A7562F404AD2B07CD8BFDA7B746586 /* MagicalRecord+ErrorHandling.h in Headers */ = {isa = PBXBuildFile; fileRef = A4A68972E84A8F1928D3BF0CA9C2178E /* MagicalRecord+ErrorHandling.h */; };
+		B8DCC72A1BB5A39200778D1C /* PBDataSourceKit.h in Headers */ = {isa = PBXBuildFile; fileRef = B8DCC7291BB5A39200778D1C /* PBDataSourceKit.h */; settings = {ASSET_TAGS = (); }; };
 		BA17E8BC41053AA69D555D6469FF4CAF /* NSManagedObjectContext+MagicalThreading.h in Headers */ = {isa = PBXBuildFile; fileRef = 7182E9D3C80A49C5D129FE52BCAA5783 /* NSManagedObjectContext+MagicalThreading.h */; };
 		BA8C9A927C8E7BAD715C1EEF7ACDA79B /* RKObjectMapping.h in Headers */ = {isa = PBXBuildFile; fileRef = 10E7656293309EA130C59D062696C0E8 /* RKObjectMapping.h */; };
 		BC0FCB4AA5D2A177106643EA503A0925 /* MagicalRecord+Actions.h in Headers */ = {isa = PBXBuildFile; fileRef = 753692CE792A3C5A5BD344AC386A6764 /* MagicalRecord+Actions.h */; };
@@ -727,6 +728,7 @@
 		B7715E496BF2083D14DC894A2DFE810D /* PBDataSourceKit-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "PBDataSourceKit-Private.xcconfig"; sourceTree = "<group>"; };
 		B8790C03C51DC0520961B5D85BEDB6A8 /* DZNEmptyDataSet-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DZNEmptyDataSet-prefix.pch"; sourceTree = "<group>"; };
 		B88F44BFEE4DA3FE60FD2B72F7A8A57A /* extobjc.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = extobjc.h; path = extobjc/extobjc.h; sourceTree = "<group>"; };
+		B8DCC7291BB5A39200778D1C /* PBDataSourceKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBDataSourceKit.h; sourceTree = "<group>"; };
 		B91BD6CC7C09C456FA3674ACE19AE9F8 /* EXTRuntimeExtensions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EXTRuntimeExtensions.m; path = extobjc/EXTRuntimeExtensions.m; sourceTree = "<group>"; };
 		BA202B23011E0428BAD2B73EE610571D /* EXTSelectorChecking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EXTSelectorChecking.m; path = extobjc/EXTSelectorChecking.m; sourceTree = "<group>"; };
 		BA4866EADE93BF3E30C204BBBF4A6BFE /* lcl_RK.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = lcl_RK.m; path = Vendor/LibComponentLogging/Core/lcl_RK.m; sourceTree = "<group>"; };
@@ -1520,6 +1522,7 @@
 				0DBDAA7D08FEA5DF783ACE79ABB3567B /* PBDataReceiver.h */,
 				F2B543CB9760FB630DE2D53D634300E0 /* PBTableDataViewController.h */,
 				A009280B08FDF6A13436B98F5F7F0DB9 /* PBTableDataViewController.m */,
+				B8DCC7291BB5A39200778D1C /* PBDataSourceKit.h */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -1776,6 +1779,7 @@
 			files = (
 				327738D7F9F289F231EAD741E9D5B7BA /* PBCollectionDataViewController.h in Headers */,
 				D51C01742C65A57819F34F0C9A4ED5B7 /* PBDataCellConfigure.h in Headers */,
+				B8DCC72A1BB5A39200778D1C /* PBDataSourceKit.h in Headers */,
 				A6E9F580C60499AFD67443CDF434CB47 /* PBDataLoadingOperation.h in Headers */,
 				675AEA0CA47E10E26700C571A50FFDA6 /* PBDataProvider.h in Headers */,
 				43FE83A45909C6A9279B1DEE5FC239D5 /* PBDataReceiver.h in Headers */,
